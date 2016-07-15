@@ -12,7 +12,6 @@ if [ $1 = "train" ] ; then
    sleep 2
    cd web/main
    xterm -geometry 80x20 -T "SimpleDS.Client" -hold -e "node runclient.js train"
-   #node runclient.js train
    cd ../../
 
 elif [ $1 = "test" ] ; then 
@@ -20,7 +19,6 @@ elif [ $1 = "test" ] ; then
    sleep 2
    cd web/main
    xterm -geometry 80x20 -T "SimpleDS.Client" -hold -e "node runclient.js test"
-   #node runclient.js test
    cd ../../
 
 else 
