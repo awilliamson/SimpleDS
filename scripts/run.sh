@@ -12,14 +12,14 @@ stty cols 120
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"/..
 pushd $DIR
 
-if [ $1 = "train" ] ; then
+if [ "$1" = "train" ] ; then
    xterm -geometry 120x50 -T "SimpleDS.Server" -hold -e "ant SimpleDS" &
    sleep 2
    pushd $DIR/web/main/
    xterm -geometry 80x20 -T "SimpleDS.Client" -hold -e "node runclient.js train"
    popd
 
-elif [ $1 = "test" ] ; then 
+elif [ "$1" = "test" ] ; then 
    xterm -geometry 120x50 -T "SimpleDS.Client" -hold -e "ant SimpleDS" &
    sleep 2
    pushd $DIR/web/main/
